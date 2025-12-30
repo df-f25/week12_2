@@ -54,7 +54,7 @@ jobs:
           username: ${{secrets.DHUB_USER}}
           password: ${{secrets.DHUB_TOKEN}}
       - name: Push Docker Image on the Dockerhub Registery
-        run: docker push ${{secrets.DHUB_USER}}/myapp:latest
+        run: docker push ${{secrets.DHUB_USER}}/app:latest
 
 
       # - name: Stop The Running Containers
