@@ -41,7 +41,7 @@ jobs:
       - name: Clone The Repo
         uses: actions/checkout@v6
       - name: Build Website Image
-        run: docker image build -t static-website:latest .
+        run: docker image build -t ${{secrets.DHUB_USER}}/app:latest .
       - name: List the Available Images on Runner
         run: docker image ls
       - name: Create and Run Container from New Image
@@ -55,7 +55,7 @@ jobs:
           password: ${{secrets.DHUB_TOKEN}}
       - name: Push Docker Image on the Dockerhub Registery
         run: docker push ${{secrets.DHUB_USER}}/myapp:latest
-        
+
 
       # - name: Stop The Running Containers
       #   run: docker container stop $(docker container ls)
